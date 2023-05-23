@@ -9,7 +9,16 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn){
     die("Connection failed" . mysqli_connect_error());
 }
-echo "Connection successful!";
+//check the source of the page
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $title = $_POST["title"];
+    $content = $_POST["content"];
+    $important = $_POST["important"];
+
+    echo $title;
+    echo $content;
+    echo $important;
+}
 ?>
 
 <!DOCTYPE html>
