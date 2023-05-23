@@ -18,9 +18,9 @@
                             <div class="nt-links">
                                 <a class="nt-link" href="#">edit note</a>
                                 <a class="nt-link" href="#">[X] delete note</a>
-                            </div>                 
+                            </div>
                         </div>
-                    
+
                          <div class="nt-content"></div>
                     </div>
         </div> 
