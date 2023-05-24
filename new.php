@@ -15,9 +15,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $content = $_POST["content"];
     $important = $_POST["important"];
 
-    echo $title;
-    echo $content;
-    echo $important;
+//SQL query to perform the database operations
+//INSERT INTO tablename (columns) VALUES (values)
+//INSERT ITNO notes ('title', 'content', 'important') VALUES ('$title', '$content', '$important')
+
+$sql = "INSERT INTO notes (title, content, important) VALUES ('";
+$sql .= $title ."','" . $content ."','" . $important ."')";
+
+//send it to the database
+if (mysqli_query($conn, $sql)){
+ echo "success";
 }
 ?>
 
