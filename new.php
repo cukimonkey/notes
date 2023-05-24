@@ -1,14 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "sqluser";
-$password = "qwerty";
-$dbname = "notes";
+require_once("includes/db.php");
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-if (!$conn){
-    die("Connection failed" . mysqli_connect_error());
-}
 //check the source of the page
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $title = $_POST["title"];
@@ -25,6 +17,7 @@ $sql .= $title ."','" . $content ."','" . $important ."')";
 //send it to the database
 if (mysqli_query($conn, $sql)){
  echo "success";
+}
 }
 ?>
 
@@ -58,3 +51,4 @@ if (mysqli_query($conn, $sql)){
             
         <input type="submit" />
 </html>
+<?php require_once("includes/footer.php") ?>
