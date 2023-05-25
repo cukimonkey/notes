@@ -1,11 +1,12 @@
 <?php
 require_once("includes/db.php");
+require_once("includes/functions.php");
 
 //check the source of the page
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    $title = $_POST["title"];
-    $content = $_POST["content"];
-    $important = $_POST["important"];
+    $title = prep_input($_POST["title"]);
+    $content = prep_input($_POST["content"]);
+    $important = prep_input($_POST["important"]);
 
 //SQL query to perform the database operations
 //INSERT INTO tablename (columns) VALUES (values)
